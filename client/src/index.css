@@ -9,4 +9,6 @@
 
 body {
   overflow-x: hidden;
+  font-family: var(--primary-font);
+  text-rendering: geometricPrecision;
 }
