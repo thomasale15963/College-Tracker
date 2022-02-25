@@ -13,7 +13,7 @@ const errorHandler = (err, req, res, next) => {
   print_console(
     {
       message: err.message,
-      stack: process.env.EXPRESS_ENV === "development" ? err.stack : null,
+      // stack: process.env.EXPRESS_ENV === "development" ? err.stack : null,
     },
     { textColor: "red" }
   );

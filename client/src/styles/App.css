@@ -1,0 +1,5 @@
+@import url("./base/colors.css");
+
+.root__app {
+  background-color: var(--navy);
+}

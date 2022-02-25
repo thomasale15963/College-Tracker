@@ -1,0 +1,96 @@
+@import url("./base/colors.css");
+
+.home__root {
+  height: 90vh;
+  display: grid;
+  place-items: center;
+  color: var(--blush-pink);
+}
+
+.home__hero {
+  width: 80%;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home__hero h1 {
+  font-size: 66px;
+  letter-spacing: 1.1px;
+  font-family: var(--headline-font);
+  font-weight: bold;
+}
+
+.home__hero h3 {
+  margin-top: 12px;
+  font-size: 32px;
+  font-family: "P";
+}
+
+.home__options__container {
+  margin-top: 40px;
+  width: 60%;
+  min-width: 380px;
+  max-width: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.home__options__button__container {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--blush-pink);
+  padding: 10px 22px;
+  transition: all 400ms ease-in;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  -webkit-transition: all 400ms ease-in;
+  -moz-transition: all 400ms ease-in;
+  -ms-transition: all 400ms ease-in;
+  -o-transition: all 400ms ease-in;
+}
+.home__options__button__container:nth-of-type(2) {
+  background-color: var(--blush-pink);
+  color: var(--navy);
+  border: 1px solid var(--navy);
+}
+
+/* Hover Animation */
+.home__options__button__container:hover {
+  background-color: var(--blush-pink);
+  color: var(--navy);
+}
+.home__options__button__container:hover a {
+  color: var(--navy);
+}
+
+.home__options__button__container:nth-of-type(2):hover {
+  background-color: var(--navy);
+  color: var(--blush-pink);
+  border: 1px solid var(--blush-pink);
+}
+.home__options__button__container:nth-of-type(2):hover a {
+  color: var(--blush-pink);
+}
+.home__options__button_icon {
+  margin-right: 5px;
+  transform: scale(0.9);
+  -webkit-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -o-transform: scale(0.9);
+}
+.home__options__button__container a {
+  text-decoration: none;
+  color: var(--blush-pink);
+}
+
+.home__options__button__container:nth-of-type(2) a {
+  text-decoration: none;
+  color: var(--navy);
+}

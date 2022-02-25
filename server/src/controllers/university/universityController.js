@@ -20,6 +20,7 @@ const University = require("../../models/University");
 
 // Add New
 const addNewUniversity = asyncHandler(async (request, response) => {
+  const information = request.body;
   const newUniversity = await University.create(information);
   response.status(201).json(newUniversity);
 });

@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { Schema } = require("mongoose");
+const validator = require("validator");
 
 const universitySchema = new Schema({
   name: {
@@ -63,7 +64,11 @@ const universitySchema = new Schema({
 
   universityWebsiteLink: String,
   programLink: [{ link: String }],
-  programEmail: [{ email: String }],
+  programEmail: [
+    {
+      email: String,
+    },
+  ],
   requirements: [
     {
       requirementName: {
