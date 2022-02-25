@@ -1,0 +1,6 @@
+/node_modules
+server/node_modules
+server/test_data
+server/helper.js
+server/index.js
+/.vscode

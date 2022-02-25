@@ -1,0 +1,21 @@
+{
+  "name": "college-tracker",
+  "version": "0.0.1",
+  "description": "A simple web app to keep track of colleges to apply to.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Thomas Alemayehu",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.3",
+    "nodemon": "^2.0.15"
+  }
+}
