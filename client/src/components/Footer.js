@@ -10,20 +10,25 @@ import { getYearForFooter } from "../utils/helpers";
 function Footer() {
   const currentYear = getYearForFooter();
 
-  //   const [{ appMode }] = useStateProviderValue();
+  // const [{ appMode }] = useStateProviderValue();
   return (
     <footer className="footer__container">
       <div className="footer__top__container">
-        <span className="footer__copyright">
-          College Tracker © {currentYear}
-        </span>
+        <div className="footer__copyright">College Tracker © {currentYear}</div>
 
         <nav className="footer__navigation">
           <ul>
-            <li>Research Mode</li>
-            <li>View Mode</li>
+            <a href="" className="active-mode">
+              Research Mode
+            </a>
+            |<a href="">View Mode</a>|<a href="">Policy</a>
           </ul>
         </nav>
+      </div>
+
+      <hr />
+      <div className="footer__bottom__container">
+        Designed & Built by Thomas Alemayehu
       </div>
     </footer>
   );
