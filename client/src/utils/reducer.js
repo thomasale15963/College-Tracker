@@ -1,5 +1,7 @@
 export const initialState = {
-  appMode: "Research",
+  // App Values to track
+  appMode: null,
+  facultyInformationValue: 0,
 };
 
 const reducer = (state, action) => {
@@ -10,6 +12,18 @@ const reducer = (state, action) => {
       return {
         ...state,
         appMode: action.appMode,
+      };
+
+    case "INCREASE_FACULTY_INPUT":
+      console.log(initialState.facultyInformationValue + 1);
+      return {
+        ...state,
+        facultyInformationValue: action.facultyInformationValue,
+      };
+    case "DECREASE_FACULTY_INPUT":
+      return {
+        ...state,
+        facultyInformationValue: action.facultyInformationValue,
       };
 
     default:

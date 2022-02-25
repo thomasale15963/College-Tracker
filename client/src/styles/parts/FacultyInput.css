@@ -1,0 +1,107 @@
+/* Faculty Style */
+.faulty__input__main {
+  width: 100%;
+  display: flex;
+  margin-top: 50px;
+  background-color: var(--navy-dark);
+  padding: 18px 0;
+}
+.faculty__input__container {
+  width: 99%;
+}
+.faculty__input__delete__button {
+  color: red;
+}
+.faculty__image__name__container {
+  display: flex;
+  align-items: center;
+}
+.faculty__input__image {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-right: 12px;
+}
+
+/* Common Styles */
+.input__item,
+.input__text__area {
+  color: var(--navy-dark) !important;
+  padding: 0 6px;
+  font-family: var(--primary-font);
+  border: none;
+  background-color: rgba(255, 255, 255, 0.75);
+  overflow: auto;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+.input__item {
+  height: 26px;
+  min-width: 250px;
+  width: 260px;
+}
+.input__text__area {
+  width: 85%;
+  min-height: 140px;
+  resize: none;
+}
+.input__item__small {
+  min-width: 120px;
+  width: 125px;
+}
+
+.input__item__medium {
+  min-width: 200px;
+  width: 225px;
+}
+.input__item:focus,
+.input__text__area:focus {
+  outline: none;
+  background-color: white;
+  border: 1px solid var(--navy-dark);
+}
+.faculty__input__label {
+  font-size: 14px;
+  letter-spacing: 0.15px;
+  color: var(--blush-pink-light);
+  margin-bottom: 5px;
+  font-family: var(--fourth-font);
+  font-weight: 400;
+  font-style: italic;
+}
+textarea::-webkit-scrollbar {
+  width: 10px;
+}
+
+textarea::-webkit-scrollbar-track {
+  background-color: var(--navy-dark);
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: var(--blush-pink-light);
+}
+
+/* End */
+
+/* Msc Classes */
+.faculty__input__msc__container-col,
+.faculty__input__msc__container-row {
+  display: flex;
+  margin-top: 12px;
+}
+
+.faculty__input__msc__container-col {
+  flex-direction: column;
+}
+
+.faculty__input__msc__container-row {
+  flex-direction: row;
+  justify-content: space-between;
+}
+.faculty__input__msc__link__input__container {
+  display: flex;
+  flex-direction: column;
+}
