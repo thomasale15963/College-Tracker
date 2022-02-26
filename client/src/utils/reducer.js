@@ -5,6 +5,7 @@ export const initialState = {
   researchModeFormInputs: {},
 
   requirementsNumberCount: 2,
+  remarkNumberCount: 3,
 
   facultyInformationValue: 0,
 };
@@ -36,6 +37,18 @@ const reducer = (state, action) => {
       return {
         ...state,
         requirementsNumberCount: action.requirementsNumberCount,
+      };
+
+    case "INCREASE_REMARK_INPUT":
+      return {
+        ...state,
+        remarkNumberCount: action.remarkNumberCount,
+      };
+
+    case "DECREASE_REMARK_INPUT":
+      return {
+        ...state,
+        remarkNumberCount: action.remarkNumberCount,
       };
 
     case "INCREASE_FACULTY_INPUT":

@@ -6,16 +6,22 @@ import { useStateProviderValue } from "../../../utils/StateProvider";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 
 // Import Form Event Handlers
-import { basicInfoRemoveErrors } from "../../../utils/formEventFunctions";
+import {
+  basicInfoRemoveErrors,
+  moreInfoComplete,
+} from "../../../utils/formEventFunctions";
 
 // Import Components
 import RequirementsInput from "./RequirementsInput";
+import RemarkInput from "./RemarkInput";
 
 function ResearchFormTwo() {
-  const [{ requirementsNumberCount }, dispatch] = useStateProviderValue();
+  const [{ requirementsNumberCount, remarkNumberCount }, dispatch] =
+    useStateProviderValue();
   const requirementsNumberCountArray = [
     ...Array(requirementsNumberCount).keys(),
   ];
+  const remarkNumberCountArray = [...Array(remarkNumberCount).keys()];
 
   function addRequirementInput() {
     dispatch({
@@ -23,12 +29,31 @@ function ResearchFormTwo() {
       requirementsNumberCount: requirementsNumberCount + 1,
     });
   }
+
+  function addRemarkInput() {
+    dispatch({
+      type: "INCREASE_REMARK_INPUT",
+      remarkNumberCount: remarkNumberCount + 1,
+    });
+  }
+
   function removeRequirementInput() {
     dispatch({
       type: "DECREASE_REQUIREMENT_INPUT",
       requirementsNumberCount:
         requirementsNumberCount > 0 ? requirementsNumberCount - 1 : 0,
     });
+  }
+
+  function removeRemarkInput() {
+    dispatch({
+      type: "DECREASE_REMARK_INPUT",
+      remarkNumberCount: remarkNumberCount > 0 ? remarkNumberCount - 1 : 0,
+    });
+  }
+
+  function handleNextButton() {
+    const result = moreInfoComplete();
   }
   return (
     <section className="research__form__two__container">
@@ -145,6 +170,7 @@ function ResearchFormTwo() {
           removeFunction={removeRequirementInput}
         />
       ))}
+
       {/* Add More Button */}
       <div
         className="container-row align-items-center research__form__two__requirement__add__button__container"
@@ -152,6 +178,32 @@ function ResearchFormTwo() {
       >
         <AddOutlinedIcon />
         <div>Add New Requirement</div>
+      </div>
+
+      {remarkNumberCountArray.map((item) => (
+        <RemarkInput
+          key={item}
+          count={item + 1}
+          removeFunction={removeRemarkInput}
+        />
+      ))}
+
+      {/* Add More Button */}
+      <div
+        className="container-row align-items-center research__form__two__requirement__add__button__container"
+        onClick={addRemarkInput}
+      >
+        <AddOutlinedIcon />
+        <div>Add New Remark</div>
+      </div>
+
+      <div className="container-col align-items-end">
+        <div
+          className="research__form__button__link"
+          onClick={handleNextButton}
+        >
+          Next
+        </div>
       </div>
     </section>
   );

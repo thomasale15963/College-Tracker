@@ -124,3 +124,22 @@ export function basicInfoRemoveErrors() {
     inputMessageElement.classList.remove("display", "error-text");
   });
 }
+
+export function moreInfoComplete() {
+  const costValue = document.getElementsByName("UniversityCost").value;
+  const costCurrency = document.getElementsByName("UniversityCurrency").value;
+  const acceptanceRate = document.getElementsByName(
+    "UniversityAcceptance"
+  ).value;
+
+  if (!costValue) {
+    // Error Border
+    // Error Message
+  } else if (!costCurrency) {
+    // Error Border
+    // Error Message
+  } else if (!acceptanceRate) {
+    // Error Border
+    // Error Message
+  }
+}
