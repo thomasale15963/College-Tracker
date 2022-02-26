@@ -17,6 +17,9 @@
   height: 170px;
   object-fit: contain;
 }
+.file__upload__button {
+  color: var(--navy-dark);
+}
 .research__form__label {
   font-size: 14px;
   letter-spacing: 0.35px;
@@ -264,4 +267,20 @@
   .input__item {
     height: 32px;
   }
+}
+
+/* Message Classes */
+#UniversityNameMessage,
+#UniversityRankMessage,
+#UniversityCountryMessage,
+#UniversityStateMessage,
+#UniversityCityMessage,
+#UniversityLinkMessage,
+#ApplicationLinkMessage,
+#ApplicationEmailMessage {
+  display: none;
+  font-size: 13px;
+  margin-top: 5px;
+  padding-left: 0.45px;
+  letter-spacing: 0.45px;
 }

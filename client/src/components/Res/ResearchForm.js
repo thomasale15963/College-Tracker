@@ -24,7 +24,7 @@ function ResearchForm() {
   }
 
   return (
-    <form className="research__form__main__container">
+    <form className="research__form__main__container" action="/">
       <ResearchFormOne />
     </form>
   );

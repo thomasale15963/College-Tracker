@@ -1,5 +1,29 @@
 /* 
   ==================================================================
+  Dynamic Classes
+  ================================================================== 
+*/
+.error-border {
+  border: 1.5px solid rgba(255, 43, 43, 0.7) !important;
+}
+.success-border {
+  border: 2px solid rgba(0, 128, 0, 0.7) !important;
+}
+.error-text {
+  color: rgba(255, 43, 43, 0.7);
+}
+.success-text {
+  color: green;
+}
+.display {
+  display: block !important;
+}
+.hide {
+  display: none !important;
+}
+
+/* 
+  ==================================================================
   Flex Containers
   ================================================================== 
 */

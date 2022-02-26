@@ -16,10 +16,10 @@ const reducer = (state, action) => {
         appMode: action.appMode,
       };
     case "RESEARCH_MODE_FORM_NEXT":
-      console.log(initialState.facultyInformationValue + 1);
       return {
         ...state,
-        facultyInformationValue: action.facultyInformationValue,
+        researchModeFormInputs: action.researchModeFormInputs,
+        researchModeFormProgress: action.researchModeFormProgress,
       };
 
     case "INCREASE_FACULTY_INPUT":
