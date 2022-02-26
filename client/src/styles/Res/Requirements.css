@@ -1,0 +1,624 @@
+/* Message Classes */
+#UniversityNameMessage,
+#UniversityRankMessage,
+#UniversityCountryMessage,
+#UniversityStateMessage,
+#UniversityCityMessage,
+#UniversityLinkMessage,
+#ApplicationLinkMessage,
+#ApplicationEmailMessage,
+#UniversityCostMessage,
+#UniversityCurrencyMessage,
+#UniversityAcceptanceMessage,
+#LoanStatusMessage,
+#RequirementNameMessage,
+#RequirementInfoMessage,
+#RequirementRemarkMessage {
+  /* display: none; */
+  font-size: 13px;
+  margin-top: 5px;
+  padding-left: 0.45px;
+  letter-spacing: 0.45px;
+}
+
+/* 
+  =======================================================================================================
+  =======================================================================================================
+  =======================================================================================================
+  FORM ONE 
+  =======================================================================================================
+  =======================================================================================================
+  =======================================================================================================
+*/
+.research__form__one__container {
+  color: var(--blush-pink-light);
+}
+
+.research__form__one__container > h1 {
+  margin-bottom: 16px;
+  font-weight: 500;
+  letter-spacing: 0.45px;
+  font-family: var(--fourth-font);
+  font-size: 20px;
+  margin-bottom: 32px;
+}
+.image__name__container {
+  padding-bottom: 15px;
+}
+.research__form__image {
+  width: 170px;
+  height: 170px;
+  object-fit: contain;
+}
+.file__upload__button {
+  color: var(--navy-dark);
+}
+.research__form__label {
+  font-size: 14px;
+  letter-spacing: 0.35px;
+  color: var(--blush-pink-light);
+  margin-bottom: 5px;
+  font-family: var(--fourth-font);
+  font-weight: 400;
+  font-style: italic;
+}
+.research__form__label span {
+  color: rgba(255, 0, 0, 0.75);
+  margin-top: 16px;
+  font-weight: bold;
+}
+.research__form__text__input__medium {
+  min-width: 200px;
+  width: 225px;
+}
+.research__form__text__input__small {
+  min-width: 190px;
+  width: 195px;
+}
+.input__item {
+  color: var(--navy-dark) !important;
+  padding: 0 6px;
+  font-family: var(--primary-font);
+  border: none;
+  background-color: rgba(255, 255, 255, 0.75);
+  height: 26px;
+  overflow: scroll;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+
+.input__item:focus {
+  outline: none;
+  background-color: white;
+  border: 1px solid var(--navy-dark);
+}
+.research__form__button__link {
+  border: 1px solid var(--blush-pink);
+  width: fit-content;
+  padding: 6px 30px;
+  margin-top: 72px;
+  transition: all 300ms ease-in;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+}
+.research__form__button__link:hover {
+  color: var(--navy-dark);
+  background-color: var(--blush-pink);
+}
+
+/* Phones */
+@media only screen and (max-width: 576px) {
+  .research__form__one__container > h1,
+  .research__form__heading__title {
+    letter-spacing: 0.25px;
+  }
+
+  .research__form__image {
+    width: 120px;
+    height: 120px;
+  }
+  .research__form__label {
+    font-size: 13px;
+    letter-spacing: 0.25px;
+  }
+  .research__form__text__input__medium {
+    min-width: 165px;
+    width: 175px;
+  }
+  .research__form__text__input__small {
+    min-width: 130px;
+    width: 135px;
+  }
+  .input__item {
+    height: 22px;
+  }
+
+  .input__item:focus {
+    outline: none;
+    background-color: white;
+    border: 1px solid var(--navy-dark);
+  }
+  .research__form__button__link {
+    transition: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+  }
+}
+
+/* Tablets */
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+  .research__form__one__container > h1,
+  .research__form__heading__title {
+    letter-spacing: 0.45px;
+  }
+
+  .research__form__image {
+    width: 170px;
+    height: 170px;
+  }
+  .research__form__label {
+    font-size: 14px;
+    letter-spacing: 0.45px;
+  }
+  .research__form__text__input__medium {
+    min-width: 220px;
+    width: 225px;
+  }
+  .research__form__text__input__small {
+    min-width: 155px;
+    width: 160px;
+  }
+  .input__item {
+    height: 28px;
+  }
+}
+
+/* Laptops */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .research__form__one__container > h1,
+  .research__form__heading__title {
+    letter-spacing: 0.55px;
+  }
+
+  .research__form__image {
+    width: 180px;
+    height: 180px;
+  }
+  .research__form__label {
+    font-size: 14px;
+    letter-spacing: 0.55px;
+  }
+  .research__form__text__input__medium {
+    min-width: 255px;
+    width: 265px;
+  }
+  .research__form__text__input__small {
+    min-width: 200px;
+    width: 220px;
+  }
+  .input__item {
+    height: 30px;
+  }
+}
+
+/* Large Laptops */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .research__form__one__container {
+    padding: 10px 35px;
+  }
+  .research__form__one__container > h1,
+  .research__form__heading__title {
+    letter-spacing: 0.65px;
+  }
+
+  .research__form__image {
+    width: 185px;
+    height: 185px;
+  }
+  .research__form__label {
+    font-size: 14px;
+    letter-spacing: 0.65px;
+  }
+  .research__form__text__input__medium {
+    min-width: 275px;
+    width: 285px;
+  }
+  .research__form__text__input__small {
+    min-width: 220px;
+    width: 240px;
+  }
+  .input__item {
+    height: 30px;
+  }
+}
+
+/* Desktops*/
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  .research__form__one__container {
+    padding: 10px 55px;
+  }
+  .research__form__one__container > h1,
+  .research__form__heading__title {
+    letter-spacing: 0.7px;
+  }
+
+  .research__form__image {
+    width: 190px;
+    height: 190px;
+  }
+  .research__form__label {
+    font-size: 15px;
+    letter-spacing: 0.7px;
+  }
+  .research__form__text__input__medium {
+    min-width: 295px;
+    width: 315px;
+  }
+  .research__form__text__input__small {
+    min-width: 270px;
+    width: 280px;
+  }
+  .input__item {
+    height: 30px;
+  }
+}
+
+/* Screens */
+@media only screen and (min-width: 1400px) {
+  .research__form__one__container {
+    padding: 10px 70px;
+  }
+  .research__form__one__container > h1,
+  .research__form__heading__title {
+    letter-spacing: 0.75px;
+  }
+
+  .research__form__image {
+    width: 200px;
+    height: 200px;
+  }
+  .research__form__label {
+    font-size: 16px;
+    letter-spacing: 0.75px;
+  }
+  .research__form__text__input__medium {
+    min-width: 340px;
+    width: 355px;
+  }
+  .research__form__text__input__small {
+    min-width: 310px;
+    width: 325px;
+  }
+  .input__item {
+    height: 32px;
+  }
+}
+
+/* 
+  =======================================================================================================
+  =======================================================================================================
+  =======================================================================================================
+  FORM TWO 
+  =======================================================================================================
+  =======================================================================================================
+  =======================================================================================================
+*/
+.research__form__two__container {
+  color: var(--blush-pink-light);
+}
+
+.research__form__one__container > h1,
+.research__form__heading__title {
+  margin-bottom: 16px;
+  font-weight: 500;
+  letter-spacing: 0.45px;
+  font-family: var(--fourth-font);
+  font-size: 20px;
+  margin-bottom: 32px;
+}
+
+.research__form__label {
+  font-size: 14px;
+  letter-spacing: 0.35px;
+  color: var(--blush-pink-light);
+  margin-bottom: 5px;
+  font-family: var(--fourth-font);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.research__form__label span {
+  color: rgba(255, 0, 0, 0.75);
+  margin-top: 16px;
+  font-weight: bold;
+}
+.research__form__text__input__medium {
+  min-width: 200px;
+  width: 225px;
+}
+.research__form__text__input__small {
+  min-width: 190px;
+  width: 195px;
+}
+.input__item {
+  color: var(--navy-dark) !important;
+  padding: 0 6px;
+  font-family: var(--primary-font);
+  border: none;
+  background-color: rgba(255, 255, 255, 0.75);
+  height: 26px;
+  overflow: scroll;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+
+.input__item:focus {
+  outline: none;
+  background-color: white;
+  border: 1px solid var(--navy-dark);
+}
+.research__form__button__link {
+  border: 1px solid var(--blush-pink);
+  width: fit-content;
+  padding: 6px 30px;
+  margin-top: 72px;
+  transition: all 300ms ease-in;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+}
+.research__form__button__link:hover {
+  color: var(--navy-dark);
+  background-color: var(--blush-pink);
+}
+/* Phones */
+@media only screen and (max-width: 576px) {
+  .research__form__one__container > h1,
+  .research__form__heading__title {
+    letter-spacing: 0.25px;
+  }
+
+  .research__form__image {
+    width: 120px;
+    height: 120px;
+  }
+  .research__form__label {
+    font-size: 13px;
+    letter-spacing: 0.25px;
+  }
+  .research__form__text__input__medium {
+    min-width: 165px;
+    width: 175px;
+  }
+  .research__form__text__input__small {
+    min-width: 130px;
+    width: 135px;
+  }
+  .input__item {
+    height: 22px;
+  }
+
+  .input__item:focus {
+    outline: none;
+    background-color: white;
+    border: 1px solid var(--navy-dark);
+  }
+  .research__form__button__link {
+    transition: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+  }
+}
+
+/* Tablets */
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+  .research__form__one__container > h1,
+  .research__form__heading__title {
+    letter-spacing: 0.45px;
+  }
+
+  .research__form__image {
+    width: 170px;
+    height: 170px;
+  }
+  .research__form__label {
+    font-size: 14px;
+    letter-spacing: 0.45px;
+  }
+  .research__form__text__input__medium {
+    min-width: 220px;
+    width: 225px;
+  }
+  .research__form__text__input__small {
+    min-width: 155px;
+    width: 160px;
+  }
+  .input__item {
+    height: 28px;
+  }
+}
+
+/* Laptops */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .research__form__one__container > h1,
+  .research__form__heading__title {
+    letter-spacing: 0.55px;
+  }
+
+  .research__form__image {
+    width: 180px;
+    height: 180px;
+  }
+  .research__form__label {
+    font-size: 14px;
+    letter-spacing: 0.55px;
+  }
+  .research__form__text__input__medium {
+    min-width: 255px;
+    width: 265px;
+  }
+  .research__form__text__input__small {
+    min-width: 200px;
+    width: 220px;
+  }
+  .input__item {
+    height: 30px;
+  }
+}
+
+/* Large Laptops */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .research__form__one__container {
+    padding: 10px 35px;
+  }
+  .research__form__one__container > h1,
+  .research__form__heading__title {
+    letter-spacing: 0.65px;
+  }
+
+  .research__form__image {
+    width: 185px;
+    height: 185px;
+  }
+  .research__form__label {
+    font-size: 14px;
+    letter-spacing: 0.65px;
+  }
+  .research__form__text__input__medium {
+    min-width: 275px;
+    width: 285px;
+  }
+  .research__form__text__input__small {
+    min-width: 220px;
+    width: 240px;
+  }
+  .input__item {
+    height: 30px;
+  }
+}
+
+/* Desktops*/
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  .research__form__one__container {
+    padding: 10px 55px;
+  }
+  .research__form__one__container > h1,
+  .research__form__heading__title {
+    letter-spacing: 0.7px;
+  }
+
+  .research__form__image {
+    width: 190px;
+    height: 190px;
+  }
+  .research__form__label {
+    font-size: 15px;
+    letter-spacing: 0.7px;
+  }
+  .research__form__text__input__medium {
+    min-width: 295px;
+    width: 315px;
+  }
+  .research__form__text__input__small {
+    min-width: 270px;
+    width: 280px;
+  }
+  .input__item {
+    height: 30px;
+  }
+}
+
+/* Screens */
+@media only screen and (min-width: 1400px) {
+  .research__form__one__container {
+    padding: 10px 70px;
+  }
+  .research__form__one__container > h1,
+  .research__form__heading__title {
+    letter-spacing: 0.75px;
+  }
+
+  .research__form__image {
+    width: 200px;
+    height: 200px;
+  }
+  .research__form__label {
+    font-size: 16px;
+    letter-spacing: 0.75px;
+  }
+  .research__form__text__input__medium {
+    min-width: 340px;
+    width: 355px;
+  }
+  .research__form__text__input__small {
+    min-width: 310px;
+    width: 325px;
+  }
+  .input__item {
+    height: 32px;
+  }
+}
+
+.research__form__two__requirement__add__button__container {
+  width: fit-content;
+  padding: 8px 30px;
+  margin: 60px auto;
+  color: green;
+  border: 1.2px solid green;
+  transition: all 300ms ease-in;
+  -webkit-transition: all 300ms ease-in;
+  -moz-transition: all 300ms ease-in;
+  -ms-transition: all 300ms ease-in;
+  -o-transition: all 300ms ease-in;
+}
+
+.research__form__two__requirement__add__button__container:hover {
+  background-color: var(--blush-pink-light);
+  color: var(--navy-dark);
+  border: 1px solid var(--navy-dark);
+}
+
+/* 
+  =======================================================================================================
+  =======================================================================================================
+  =======================================================================================================
+  REQUIREMENTS INPUT
+  =======================================================================================================
+  =======================================================================================================
+  =======================================================================================================
+*/
+.requirement__input__container {
+  /* background-color: red; */
+  padding-top: 32px;
+}
+.requirement__input__container h3 {
+  margin-top: 20px;
+  font-size: 15px;
+  font-family: var(--fourth-font);
+  letter-spacing: 0.65px;
+  border-bottom: 2px solid var(--blush-pink-light);
+  width: fit-content;
+  padding-bottom: 5px;
+}
+
+.requirement__remove__button__container {
+  color: rgba(255, 0, 0, 0.75);
+  transform: scale(1.15);
+  -webkit-transform: scale(1.15);
+  -moz-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  -o-transform: scale(1.15);
+}

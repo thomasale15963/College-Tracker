@@ -1,6 +1,5 @@
 // Import Helpers
 import { validateBasicInfoForm } from "./helpers";
-import { useStateProviderValue } from "./StateProvider";
 
 export function basicInfoImageChange() {
   const file = document.getElementById("UniversityImageInput").files[0];

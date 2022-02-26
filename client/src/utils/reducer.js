@@ -3,6 +3,9 @@ export const initialState = {
   appMode: null,
   researchModeFormProgress: 0,
   researchModeFormInputs: {},
+
+  requirementsNumberCount: 2,
+
   facultyInformationValue: 0,
 };
 
@@ -15,11 +18,24 @@ const reducer = (state, action) => {
         ...state,
         appMode: action.appMode,
       };
+
     case "RESEARCH_MODE_FORM_NEXT":
       return {
         ...state,
         researchModeFormInputs: action.researchModeFormInputs,
         researchModeFormProgress: action.researchModeFormProgress,
+      };
+
+    case "INCREASE_REQUIREMENT_INPUT":
+      return {
+        ...state,
+        requirementsNumberCount: action.requirementsNumberCount,
+      };
+
+    case "DECREASE_REQUIREMENT_INPUT":
+      return {
+        ...state,
+        requirementsNumberCount: action.requirementsNumberCount,
       };
 
     case "INCREASE_FACULTY_INPUT":

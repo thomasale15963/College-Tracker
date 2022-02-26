@@ -2,7 +2,6 @@
 
 import React from "react";
 
-import "../../../styles/Res/form-parts/ResearchFormOne.css";
 import { useStateProviderValue } from "../../../utils/StateProvider";
 
 // Import Form Event Handlers
@@ -28,7 +27,7 @@ function ResearchFormOne() {
   return (
     <section className="research__form__one__container">
       <h1 className="research__form__heading__title">1. Basic Information</h1>
-      <div className="container-row align-items-end image__name__container ">
+      <div className="container-row align-items-end image__name__container">
         {/* Image Input Start */}
         <div className="container-col">
           <img
@@ -41,7 +40,7 @@ function ResearchFormOne() {
             type="file"
             id="UniversityImageInput"
             name="UniversityImageInput"
-            className="file__upload__button margin-top-12"
+            className="file__upload__button"
             onChange={basicInfoImageChange}
           ></input>
         </div>
