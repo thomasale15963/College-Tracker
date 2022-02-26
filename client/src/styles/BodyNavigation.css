@@ -1,7 +1,7 @@
 .body__mode__top__navigation {
   color: var(--blush-pink);
   background-color: var(--navy-dark);
-  height: 75px;
+  height: 100px;
   padding: 25px;
   display: flex;
   justify-content: space-between;
@@ -83,7 +83,7 @@
     margin-right: 30px;
   }
   .body__mode__top__navigation ul a {
-    font-size: 18px;
+    font-size: 14px;
   }
 }
 
@@ -100,6 +100,6 @@
     margin-right: 30px;
   }
   .body__mode__top__navigation ul a {
-    font-size: 18px;
+    font-size: 14px;
   }
 }

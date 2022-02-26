@@ -1,0 +1,47 @@
+.research__form__main__container {
+  margin: 10px 20px 60px 10px;
+  padding: 20px 20px 35px 20px;
+  background-color: var(--navy-dark);
+  box-shadow: 0 4px 60px rgba(128, 126, 126, 0.25);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+/* Phones */
+@media only screen and (max-width: 576px) {
+  .research__form__main__container {
+    margin: 10px 20px 35px 20px;
+  }
+}
+
+/* Tablets */
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+}
+
+/* Laptops */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+}
+
+/* Large Laptops */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .research__form__main__container {
+    margin: 15px 35px 65px 35px;
+  }
+}
+
+/* Desktops*/
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  .research__form__main__container {
+    margin: 15px 45px 65px 45px;
+  }
+}
+
+/* Screens */
+@media only screen and (min-width: 1400px) {
+  .research__form__main__container {
+    margin: 15px 55px 65px 55px;
+  }
+}

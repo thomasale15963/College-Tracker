@@ -1,6 +1,8 @@
 export const initialState = {
   // App Values to track
   appMode: null,
+  researchModeFormProgress: 0,
+  researchModeFormInputs: {},
   facultyInformationValue: 0,
 };
 
@@ -12,6 +14,12 @@ const reducer = (state, action) => {
       return {
         ...state,
         appMode: action.appMode,
+      };
+    case "RESEARCH_MODE_FORM_NEXT":
+      console.log(initialState.facultyInformationValue + 1);
+      return {
+        ...state,
+        facultyInformationValue: action.facultyInformationValue,
       };
 
     case "INCREASE_FACULTY_INPUT":
