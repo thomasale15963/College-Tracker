@@ -17,7 +17,7 @@
 #RemarkMessageMessage,
 #RemarkTypeMessage,
 #RemarkNameMessage {
-  /* display: none; */
+  display: none;
   font-size: 13px;
   margin-top: 5px;
   padding-left: 0.45px;

@@ -4,8 +4,8 @@ export const initialState = {
   researchModeFormProgress: 0,
   researchModeFormInputs: {},
 
-  requirementsNumberCount: 2,
-  remarkNumberCount: 3,
+  requirementsNumberCount: 0,
+  remarkNumberCount: 0,
 
   facultyInformationValue: 0,
 };

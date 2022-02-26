@@ -7,7 +7,7 @@ import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 
 // Import Form Event Handlers
 import {
-  basicInfoRemoveErrors,
+  moreInfoRemoveErrors,
   moreInfoComplete,
 } from "../../../utils/formEventFunctions";
 
@@ -16,8 +16,10 @@ import RequirementsInput from "./RequirementsInput";
 import RemarkInput from "./RemarkInput";
 
 function ResearchFormTwo() {
-  const [{ requirementsNumberCount, remarkNumberCount }, dispatch] =
-    useStateProviderValue();
+  const [
+    { requirementsNumberCount, remarkNumberCount, researchModeFormInputs },
+    dispatch,
+  ] = useStateProviderValue();
   const requirementsNumberCountArray = [
     ...Array(requirementsNumberCount).keys(),
   ];
@@ -54,6 +56,14 @@ function ResearchFormTwo() {
 
   function handleNextButton() {
     const result = moreInfoComplete();
+    if (result) {
+      const researchModeFormProgressNew = {
+        ...researchModeFormProgress,
+        ...result,
+      };
+
+      console.log(researchModeFormProgressNew, researchModeFormProgress);
+    }
   }
   return (
     <section className="research__form__two__container">
@@ -73,7 +83,7 @@ function ResearchFormTwo() {
             name="UniversityCost"
             placeholder="3000"
             id="UniversityCost"
-            onChange={basicInfoRemoveErrors}
+            onChange={moreInfoRemoveErrors}
           />
           <div id="UniversityCostMessage">Invalid Cost Value</div>
         </div>
@@ -86,7 +96,7 @@ function ResearchFormTwo() {
             id="UniversityCurrency"
             className="research__form__text__input__small input__item"
             defaultValue="Birr"
-            onChange={basicInfoRemoveErrors}
+            onChange={moreInfoRemoveErrors}
           >
             <option value="USD">USD</option>
             <option value="Euro">Euros</option>
@@ -114,7 +124,7 @@ function ResearchFormTwo() {
             name="UniversityAcceptance"
             placeholder="30"
             id="UniversityAcceptance"
-            onChange={basicInfoRemoveErrors}
+            onChange={moreInfoRemoveErrors}
           />
           <div id="UniversityAcceptanceMessage">Invalid Acceptance Rate</div>
         </div>
@@ -135,7 +145,7 @@ function ResearchFormTwo() {
               </label>
               <input
                 type="radio"
-                name="Yes"
+                name="LoanStatus"
                 value="Yes"
                 id="LoanStatusYes"
                 className="radio__input"
@@ -150,8 +160,8 @@ function ResearchFormTwo() {
               </label>
               <input
                 type="radio"
-                name="Yes"
-                value="Yes"
+                name="LoanStatus"
+                value="No"
                 id="LoanStatusNo"
                 className="radio__input"
               />

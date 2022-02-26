@@ -42,7 +42,6 @@ function RemarkInput({ count, removeFunction }) {
             name="RemarkType"
             id="RemarkType"
             className="research__form__text__input__medium input__item"
-            value="Good"
           >
             <option value="Good">Good</option>
             <option value="Neutral">Neutral</option>

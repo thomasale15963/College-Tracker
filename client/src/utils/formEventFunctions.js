@@ -126,20 +126,136 @@ export function basicInfoRemoveErrors() {
 }
 
 export function moreInfoComplete() {
-  const costValue = document.getElementsByName("UniversityCost").value;
-  const costCurrency = document.getElementsByName("UniversityCurrency").value;
-  const acceptanceRate = document.getElementsByName(
-    "UniversityAcceptance"
-  ).value;
-
+  var values;
+  const costValue = document.getElementsByName("UniversityCost")[0].value;
+  const costCurrency =
+    document.getElementsByName("UniversityCurrency")[0].value;
+  const acceptanceRate = document.getElementsByName("UniversityAcceptance")[0]
+    .value;
+  const loanStatus = document.querySelector(
+    'input[name="LoanStatus"]:checked'
+  )?.value;
   if (!costValue) {
     // Error Border
+    const costInputElement = document.getElementById("UniversityCost");
+    costInputElement.classList.add("error-border");
     // Error Message
-  } else if (!costCurrency) {
+    const costInputMessageElement = document.getElementById(
+      "UniversityCostMessage"
+    );
+    costInputElement.classList.add("error-border");
+    costInputMessageElement.classList.add("display", "error-text");
+  }
+  if (!costCurrency) {
     // Error Border
+    const currencyInputElement = document.getElementById("UniversityCurrency");
     // Error Message
-  } else if (!acceptanceRate) {
-    // Error Border
+    const currencyInputMessageElement = document.getElementById(
+      "UniversityCurrencyMessage"
+    );
+    currencyInputElement.classList.add("error-border");
+    currencyInputMessageElement.classList.add("display", "error-text");
     // Error Message
   }
+  if (!acceptanceRate) {
+    // Error Border
+    const acceptanceInputElement = document.getElementById(
+      "UniversityAcceptance"
+    );
+    // Error Message
+    const acceptanceInputMessageElement = document.getElementById(
+      "UniversityAcceptanceMessage"
+    );
+    acceptanceInputElement.classList.add("error-border");
+    acceptanceInputMessageElement.classList.add("display", "error-text");
+  }
+  if (!loanStatus) {
+    document
+      .getElementById("LoanStatusMessage")
+      .classList.add("display", "error-text");
+  }
+
+  // get all req
+  const allRequirementNames = document.getElementsByName("RequirementName");
+  const allRequirementInfo = document.getElementsByName("RequirementInfo");
+  const allRequirementRemark = document.getElementsByName("RequirementRemark");
+
+  var allRequirements = [];
+
+  for (let i = 0; i < allRequirementNames.length; i++) {
+    if (allRequirementNames[i].value) {
+      allRequirements.push({
+        requirementName: allRequirementNames[i].value,
+        requirementInfo: allRequirementInfo[i].value,
+        requirementRemark: allRequirementRemark[i].value,
+      });
+    }
+  }
+
+  // get all req
+  const allRemarkNames = document.getElementsByName("RequirementName");
+  const allRemarkTypes = document.getElementsByName("RemarkType");
+  const allRemarkMessages = document.getElementsByName("RemarkMessage");
+
+  var allRemarks = [];
+
+  for (let i = 0; i < allRemarkNames.length; i++) {
+    if (allRemarkNames[i].value) {
+      allRemarks.push({
+        remarkMessage: allRemarkNames[i].value,
+        allRemarkTypes: allRemarkTypes[i].value,
+        allRemarkMessages: allRemarkMessages[i].value,
+      });
+    }
+  }
+
+  if (costCurrency && acceptanceRate && costValue && loanStatus) {
+    values = {
+      costValue,
+      costCurrency,
+      acceptanceRate,
+      loanStatus,
+      allRequirements,
+      allRemarks,
+    };
+  }
+
+  return values;
+}
+
+export function moreInfoRemoveErrors() {
+  // Error Border
+  const costInputElement = document.getElementById("UniversityCost");
+  costInputElement.classList.remove("error-border");
+  // Error Message
+  const costInputMessageElement = document.getElementById(
+    "UniversityCostMessage"
+  );
+  costInputElement.classList.remove("error-border");
+  costInputMessageElement.classList.remove("display", "error-text");
+
+  // Error Border
+  const currencyInputElement = document.getElementById("UniversityCurrency");
+  // Error Message
+  const currencyInputMessageElement = document.getElementById(
+    "UniversityCurrencyMessage"
+  );
+  currencyInputElement.classList.remove("error-border");
+  currencyInputMessageElement.classList.remove("display", "error-text");
+  // Error Message
+
+  // Error Border
+  const acceptanceInputElement = document.getElementById(
+    "UniversityAcceptance"
+  );
+  // Error Message
+  const acceptanceInputMessageElement = document.getElementById(
+    "UniversityAcceptanceMessage"
+  );
+  acceptanceInputElement.classList.remove("error-border");
+  acceptanceInputMessageElement.classList.remove("display", "error-text");
+
+  const loanStatusMessage = document
+    .getElementById("LoanStatusMessage")
+    .classList.remove("display", "error-text");
 }
