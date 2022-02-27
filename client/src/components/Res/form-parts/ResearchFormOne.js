@@ -11,17 +11,20 @@ import {
   basicInfoRemoveErrors,
 } from "../../../utils/formEventFunctions";
 
+import { saveToSessionStorage } from "../../../utils/helpers";
 function ResearchFormOne() {
   const [{ researchModeFormProgress }, dispatch] = useStateProviderValue();
 
-  function handleNextButton() {
-    const researchModeFormInputs = basicInfoComplete();
+  async function handleNextButton() {
+    const researchModeFormInputs = await basicInfoComplete();
     if (researchModeFormInputs) {
-      dispatch({
-        type: "RESEARCH_MODE_FORM_NEXT",
-        researchModeFormInput: researchModeFormInputs,
-        researchModeFormProgress: researchModeFormProgress + 1,
-      });
+      if (researchModeFormProgress < 1) {
+        saveToSessionStorage("researchModeCacheData", researchModeFormInputs);
+        dispatch({
+          type: "RESEARCH_MODE_FORM_NEXT",
+          researchModeFormProgress: researchModeFormProgress + 1,
+        });
+      }
     }
   }
   return (

@@ -11,13 +11,17 @@ import {
   moreInfoComplete,
 } from "../../../utils/formEventFunctions";
 
+import {
+  saveToSessionStorage,
+  getFromSessionStorage,
+} from "../../../utils/helpers";
 // Import Components
 import RequirementsInput from "./RequirementsInput";
 import RemarkInput from "./RemarkInput";
 
 function ResearchFormTwo() {
   const [
-    { requirementsNumberCount, remarkNumberCount, researchModeFormInputs },
+    { requirementsNumberCount, remarkNumberCount, researchModeFormProgress },
     dispatch,
   ] = useStateProviderValue();
   const requirementsNumberCountArray = [
@@ -56,13 +60,26 @@ function ResearchFormTwo() {
 
   function handleNextButton() {
     const result = moreInfoComplete();
+    var researchModeCacheData = JSON.parse(
+      getFromSessionStorage("researchModeCacheData")
+    );
     if (result) {
-      const researchModeFormProgressNew = {
-        ...researchModeFormProgress,
+      const researchModeCacheDataUpdate = {
+        ...researchModeCacheData,
         ...result,
       };
 
-      console.log(researchModeFormProgressNew, researchModeFormProgress);
+      saveToSessionStorage(
+        "researchModeCacheData",
+        researchModeCacheDataUpdate
+      );
+
+      if (researchModeFormProgress < 2) {
+        dispatch({
+          type: "RESEARCH_MODE_FORM_NEXT",
+          researchModeFormProgress: researchModeFormProgress + 1,
+        });
+      }
     }
   }
   return (

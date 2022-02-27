@@ -14,7 +14,25 @@ function validateBasicInfoForm(values, keys) {
   return result;
 }
 
+function saveToSessionStorage(name, data) {
+  try {
+    sessionStorage.setItem(name, JSON.stringify(data));
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+function getFromSessionStorage(name) {
+  try {
+    return sessionStorage.getItem(name);
+  } catch (e) {
+    return false;
+  }
+}
 module.exports = {
   getYearForFooter,
   validateBasicInfoForm,
+  saveToSessionStorage,
+  getFromSessionStorage,
 };

@@ -8,7 +8,6 @@ import { useStateProviderValue } from "../../utils/StateProvider";
 function FacultyInput() {
   const [{ facultyInformationValue }, dispatch] = useStateProviderValue();
   function removeFacultyInput() {
-    console.log("Testing Button");
     dispatch({
       type: "DECREASE_FACULTY_INPUT",
       facultyInformationValue:

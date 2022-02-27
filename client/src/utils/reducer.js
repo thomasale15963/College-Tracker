@@ -2,7 +2,6 @@ export const initialState = {
   // App Values to track
   appMode: null,
   researchModeFormProgress: 0,
-  researchModeFormInputs: {},
 
   requirementsNumberCount: 0,
   remarkNumberCount: 0,
@@ -23,7 +22,6 @@ const reducer = (state, action) => {
     case "RESEARCH_MODE_FORM_NEXT":
       return {
         ...state,
-        researchModeFormInputs: action.researchModeFormInputs,
         researchModeFormProgress: action.researchModeFormProgress,
       };
 
@@ -52,7 +50,6 @@ const reducer = (state, action) => {
       };
 
     case "INCREASE_FACULTY_INPUT":
-      console.log(initialState.facultyInformationValue + 1);
       return {
         ...state,
         facultyInformationValue: action.facultyInformationValue,

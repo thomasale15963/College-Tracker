@@ -4,7 +4,6 @@ import { validateBasicInfoForm } from "./helpers";
 export function basicInfoImageChange() {
   const file = document.getElementById("UniversityImageInput").files[0];
   const imagePreview = document.getElementById("UniversityImage");
-
   if (file) {
     const reader = new FileReader();
 
@@ -27,12 +26,19 @@ export function basicInfoImageChange() {
   }
 }
 
-export function basicInfoComplete() {
+function getBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = (error) => reject(error);
+  });
+}
+
+export async function basicInfoComplete() {
   // Get All Data
   // image file
-  const possibleImageFile = document.getElementById("UniversityImageInput")
-    .files[0];
-  const imageFile = possibleImageFile ? possibleImageFile : null;
+  const imageFile = document.getElementById("UniversityImageInput").files[0];
   //   U-name
   const universityName = document.getElementById("UniversityName").value;
   // U-rank
@@ -71,8 +77,7 @@ export function basicInfoComplete() {
     ]
   );
   console.log(formValidity);
-  if (formValidity.length != 0) {
-    console.log("FORM INVALID");
+  if (formValidity.length !== 0) {
     formValidity.forEach((key) => {
       const inputElement = document.getElementById(key);
       const inputMessageElement = document.getElementById(key + "Message");
@@ -80,9 +85,11 @@ export function basicInfoComplete() {
       inputMessageElement.classList.add("display", "error-text");
     });
   } else {
+    // process image
+    const imageUrl = await getBase64(imageFile);
     const researchModeFormInputs = {
       name: universityName,
-      image: imageFile,
+      image: imageUrl ? imageUrl : "",
       location: {
         country: universityCountry,
         city: universityCity,
@@ -94,6 +101,7 @@ export function basicInfoComplete() {
       programEmail: splitterByComma("email", applicationEmail),
     };
 
+    console.log(researchModeFormInputs);
     return researchModeFormInputs;
   }
   // Cache Data
@@ -255,7 +263,7 @@ export function moreInfoRemoveErrors() {
   acceptanceInputElement.classList.remove("error-border");
   acceptanceInputMessageElement.classList.remove("display", "error-text");
 
-  const loanStatusMessage = document
+  document
     .getElementById("LoanStatusMessage")
     .classList.remove("display", "error-text");
 }
