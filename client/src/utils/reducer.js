@@ -5,6 +5,7 @@ export const initialState = {
 
   requirementsNumberCount: 0,
   remarkNumberCount: 0,
+  coursePathNumberCount: 1,
 
   facultyInformationValue: 0,
 };
