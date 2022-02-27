@@ -84,9 +84,8 @@ function ResearchFormTwo() {
   }
   return (
     <section className="research__form__two__container">
-      <div className="container-row align-items-center justify-space-between">
-        <h1 className="research__form__heading__title">2. More Information</h1>
-      </div>
+      <h1 className="research__form__heading__title">2. More Information</h1>
+
       <div className="container-row align-items-center justify-space-between margin-top-32">
         {/* Cost Input Start */}
 

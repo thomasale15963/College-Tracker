@@ -1,29 +1,3 @@
-/* Message Classes */
-#UniversityNameMessage,
-#UniversityRankMessage,
-#UniversityCountryMessage,
-#UniversityStateMessage,
-#UniversityCityMessage,
-#UniversityLinkMessage,
-#ApplicationLinkMessage,
-#ApplicationEmailMessage,
-#UniversityCostMessage,
-#UniversityCurrencyMessage,
-#UniversityAcceptanceMessage,
-#LoanStatusMessage,
-#RequirementNameMessage,
-#RequirementInfoMessage,
-#RequirementRemarkMessage,
-#RemarkMessageMessage,
-#RemarkTypeMessage,
-#RemarkNameMessage {
-  display: none;
-  font-size: 13px;
-  margin-top: 5px;
-  padding-left: 0.45px;
-  letter-spacing: 0.45px;
-}
-
 /* 
   =======================================================================================================
   =======================================================================================================
@@ -33,18 +7,7 @@
   =======================================================================================================
   =======================================================================================================
 */
-.research__form__one__container {
-  color: var(--blush-pink-light);
-}
 
-.research__form__one__container > h1 {
-  margin-bottom: 16px;
-  font-weight: 500;
-  letter-spacing: 0.45px;
-  font-family: var(--fourth-font);
-  font-size: 20px;
-  margin-bottom: 32px;
-}
 .image__name__container {
   padding-bottom: 15px;
 }
@@ -313,19 +276,6 @@
   =======================================================================================================
   =======================================================================================================
 */
-.research__form__two__container {
-  color: var(--blush-pink-light);
-}
-
-.research__form__one__container > h1,
-.research__form__heading__title {
-  margin-bottom: 16px;
-  font-weight: 500;
-  letter-spacing: 0.45px;
-  font-family: var(--fourth-font);
-  font-size: 20px;
-  margin-bottom: 32px;
-}
 
 .research__form__label {
   font-size: 14px;
@@ -630,6 +580,11 @@
   =======================================================================================================
   =======================================================================================================
 */
+.research__form__one__container,
+.research__form__two__container,
+.research__form__three__container {
+  color: var(--blush-pink-light);
+}
 
 .requirement__input__container h3,
 .remark__input__container h3 {
@@ -650,4 +605,30 @@
   -moz-transform: scale(1.15);
   -ms-transform: scale(1.15);
   -o-transform: scale(1.15);
+}
+
+/* Message Classes */
+#UniversityNameMessage,
+#UniversityRankMessage,
+#UniversityCountryMessage,
+#UniversityStateMessage,
+#UniversityCityMessage,
+#UniversityLinkMessage,
+#ApplicationLinkMessage,
+#ApplicationEmailMessage,
+#UniversityCostMessage,
+#UniversityCurrencyMessage,
+#UniversityAcceptanceMessage,
+#LoanStatusMessage,
+#RequirementNameMessage,
+#RequirementInfoMessage,
+#RequirementRemarkMessage,
+#RemarkMessageMessage,
+#RemarkTypeMessage,
+#RemarkNameMessage {
+  display: none;
+  font-size: 13px;
+  margin-top: 5px;
+  padding-left: 0.45px;
+  letter-spacing: 0.45px;
 }

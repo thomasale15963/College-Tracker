@@ -2,15 +2,16 @@
 import "../../styles/Res/ResearchForm.css";
 
 // Import Sub Styles
-import "../../styles/Res/Requirements.css";
+import "../../styles/Res/Research.css";
 // import "../../utils/backup.css";
 
 // Import Components
 import ResearchFormOne from "./form-parts/ResearchFormOne";
+import ResearchFormTwo from "./form-parts/ResearchFormTwo";
+import ResearchFormThree from "./form-parts/ResearchFormThree";
 
 // Import Global State Provider
 import { useStateProviderValue } from "../../utils/StateProvider";
-import ResearchFormTwo from "./form-parts/ResearchFormTwo";
 
 //
 // import FacultyInput from "../parts/FacultyInput";
@@ -29,8 +30,9 @@ function ResearchForm() {
 
   return (
     <form className="research__form__main__container" action="/">
-      <ResearchFormOne />
+      {/* <ResearchFormOne /> */}
       <ResearchFormTwo />
+      <ResearchFormThree />
     </form>
   );
 
