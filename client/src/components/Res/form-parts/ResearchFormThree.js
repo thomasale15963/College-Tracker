@@ -14,6 +14,9 @@ import { useStateProviderValue } from "../../../utils/StateProvider";
 import ScholarshipInput from "./ScholarshipInput";
 import FacultyInput from "./FacultyInput";
 
+//
+import { useNavigate } from "react-router-dom";
+
 // Get Helpers
 import { advancedInfoComplete } from "../../../utils/formEventFunctions";
 import {
@@ -23,8 +26,10 @@ import {
 import axios from "axios";
 
 function ResearchFormThree() {
+  const navigate = useNavigate();
   const [
     {
+      researchModeFormProgress,
       coursePathNumberCount,
       scholarshipNumberCount,
       facultyInformationCount,
@@ -92,15 +97,29 @@ function ResearchFormThree() {
         ...result,
       };
       saveToSessionStorage("researchModeCacheData", cachedDataUpdated);
-      const apiCall = await axios({
-        method: "POST",
-        url: apiURI,
-        data: {
-          researchModeFormData: cachedDataUpdated,
-        },
+      navigate("/loader");
+
+      dispatch({
+        type: "RESEARCH_MODE_FORM_NEXT",
+        researchModeFormProgress: researchModeFormProgress + 1,
       });
 
-      console.log(apiCall);
+      const apiCall = await axios({
+        method: "POST",
+        url: `${apiURI}/university/add`,
+        timeout: 10000,
+        data: {
+          information: cachedDataUpdated,
+        },
+      })
+        .then((response) => {
+          console.log(response);
+          navigate("/");
+        })
+        .catch((e) => {
+          console.log(e);
+          navigate("/error");
+        });
     }
   }
   return (

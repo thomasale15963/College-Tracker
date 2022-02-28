@@ -15,11 +15,17 @@ import {
   saveToSessionStorage,
   getFromSessionStorage,
 } from "../../../utils/helpers";
+
+//
+import { useNavigate } from "react-router-dom";
+
 // Import Components
 import RequirementsInput from "./RequirementsInput";
 import RemarkInput from "./RemarkInput";
 
 function ResearchFormTwo() {
+  let navigate = useNavigate();
+
   const [
     { requirementsNumberCount, remarkNumberCount, researchModeFormProgress },
     dispatch,
@@ -80,6 +86,8 @@ function ResearchFormTwo() {
           researchModeFormProgress: researchModeFormProgress + 1,
         });
       }
+
+      navigate("/form-three");
     }
   }
   return (

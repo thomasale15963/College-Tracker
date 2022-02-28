@@ -1,5 +1,5 @@
 export const initialState = {
-  apiURI: "http://localhost:5000/",
+  apiURI: "https://college-tracker-api.herokuapp.com",
   // App Values to track
   appMode: null,
   researchModeFormProgress: 0,

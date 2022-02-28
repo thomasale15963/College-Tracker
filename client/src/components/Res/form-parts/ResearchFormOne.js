@@ -10,9 +10,12 @@ import {
   basicInfoImageChange,
   basicInfoRemoveErrors,
 } from "../../../utils/formEventFunctions";
+//
+import { useNavigate } from "react-router-dom";
 
 import { saveToSessionStorage } from "../../../utils/helpers";
 function ResearchFormOne() {
+  let navigate = useNavigate();
   const [{ researchModeFormProgress }, dispatch] = useStateProviderValue();
 
   async function handleNextButton() {
@@ -25,6 +28,8 @@ function ResearchFormOne() {
           researchModeFormProgress: researchModeFormProgress + 1,
         });
       }
+
+      navigate("/form-two");
     }
   }
   return (

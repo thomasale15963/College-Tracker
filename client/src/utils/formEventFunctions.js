@@ -106,12 +106,20 @@ export async function basicInfoComplete() {
 }
 function splitterByComma(itemName, arrayValue) {
   var result = [];
-  arrayValue.split(",").forEach((item) => {
-    result.push({
-      itemName,
-      item,
+  if (itemName === "email") {
+    arrayValue.split(",").forEach((email) => {
+      result.push({
+        email,
+      });
     });
-  });
+  } else if (itemName === "link") {
+    arrayValue.split(",").forEach((link) => {
+      result.push({
+        link,
+      });
+    });
+  }
+
   return result;
 }
 export function basicInfoRemoveErrors() {
@@ -208,21 +216,23 @@ export function moreInfoComplete() {
   for (let i = 0; i < allRemarkNames.length; i++) {
     if (allRemarkNames[i].value) {
       allRemarks.push({
-        remarkMessage: allRemarkNames[i].value,
-        allRemarkTypes: allRemarkTypes[i].value,
-        allRemarkMessages: allRemarkMessages[i].value,
+        name: allRemarkNames[i].value,
+        remarkType: allRemarkTypes[i].value,
+        description: allRemarkMessages[i].value,
       });
     }
   }
 
   if (costCurrency && acceptanceRate && costValue && loanStatus) {
     values = {
-      costValue,
-      costCurrency,
+      cost: {
+        value: costValue,
+        currency: costCurrency,
+      },
       acceptanceRate,
       loanStatus,
-      allRequirements,
-      allRemarks,
+      requirements: allRequirements,
+      remark: allRemarks,
     };
   }
 
@@ -398,7 +408,7 @@ export async function advancedInfoComplete() {
     }
   }
   return {
-    scholarship: allScholarships,
+    scholarships: allScholarships,
     faculty: allFaculty,
     coursePath: allCoursePaths,
   };

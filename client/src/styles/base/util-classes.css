@@ -64,7 +64,9 @@
 .justify-space-evenly {
   justify-content: space-evenly;
 }
-
+.justify-space-center {
+  justify-content: center;
+}
 .align-items-start {
   align-items: flex-start;
 }
