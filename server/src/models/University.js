@@ -30,8 +30,8 @@ const universitySchema = new Schema({
   ranking: {
     type: Number,
   },
-  hasLoan: {
-    type: Boolean,
+  loanStatus: {
+    type: String,
     required: [true, "Loan Status is required."],
   },
 
@@ -57,8 +57,8 @@ const universitySchema = new Schema({
           courseOptionType: String,
         },
       ],
-      courseHasPHD: Boolean,
-      schoolHasPHD: Boolean,
+      courseHasPHD: String,
+      schoolHasPHD: String,
     },
   ],
 
@@ -89,10 +89,13 @@ const universitySchema = new Schema({
   scholarships: [
     {
       scholarshipType: String,
+      name: String,
+      remark: String,
       value: Number,
       requirements: [
         {
           name: String,
+          message: String,
           remark: String,
         },
       ],
@@ -116,7 +119,7 @@ const universitySchema = new Schema({
       educationalLevel: String,
     },
   ],
-  remark: [{ message: String, description: String }],
+  remark: [{ name: String, description: String, remarkType: String }],
   campusImages: [
     {
       image: Buffer,
