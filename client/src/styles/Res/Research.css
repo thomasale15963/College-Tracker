@@ -80,6 +80,20 @@
   =======================================================================================================
   =======================================================================================================
   =======================================================================================================
+  FACULTY INPUT
+  =======================================================================================================
+  =======================================================================================================
+  =======================================================================================================
+*/
+.faculty__image {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+}
+/* 
+  =======================================================================================================
+  =======================================================================================================
+  =======================================================================================================
   COMMON
   =======================================================================================================
   =======================================================================================================
@@ -87,12 +101,17 @@
 */
 .research__form__one__container,
 .research__form__two__container,
-.research__form__three__container {
+.research__form__three__container,
+.scholarship__input__container,
+.faculty__input__container {
   color: var(--blush-pink-light);
 }
 
 .requirement__input__container h3,
-.remark__input__container h3 {
+.remark__input__container h3,
+.course__path__container h3,
+.scholarship__input__container h3,
+.faculty__input__container h3 {
   margin-top: 20px;
   font-size: 15px;
   font-family: var(--fourth-font);
@@ -102,7 +121,9 @@
   padding-bottom: 5px;
 }
 .research__form__one__container > h1,
-.research__form__two__container > h1 {
+.research__form__two__container > h1,
+.scholarship__input__container > h1,
+.faculty__input__container h1 {
   margin-bottom: 16px;
   font-weight: 500;
   letter-spacing: 0.45px;
@@ -134,13 +155,13 @@
   min-width: 190px;
   width: 195px;
 }
-.input__item {
+.input__item,
+.text__area__input__item {
   color: var(--navy-dark) !important;
   padding: 0 6px;
   font-family: var(--primary-font);
   border: none;
   background-color: rgba(255, 255, 255, 0.75);
-  height: 26px;
   overflow: scroll;
   border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -148,11 +169,19 @@
   -ms-border-radius: 2px;
   -o-border-radius: 2px;
 }
-
-.input__item:focus {
+.input__item {
+  height: 26px;
+}
+.input__item:focus,
+.text__area__input__item:focus {
   outline: none;
   background-color: white;
   border: 1px solid var(--navy-dark);
+}
+.text__area__input__item {
+  resize: none;
+  overflow: auto;
+  padding-top: 5px;
 }
 .research__form__button__link {
   border: 1px solid var(--blush-pink);
@@ -171,7 +200,11 @@
 }
 
 .requirement__remove__button__container,
-.remark__remove__button__container {
+.remark__remove__button__container,
+.course__path__remove__button__container,
+.scholarship__remove__button__container,
+.scholarship__requirement__remove__button__container,
+.faculty__remove__button__container {
   color: rgba(255, 0, 0, 0.75);
   transform: scale(1.15);
   -webkit-transform: scale(1.15);
@@ -198,8 +231,23 @@
 #RequirementRemarkMessage,
 #RemarkMessageMessage,
 #RemarkTypeMessage,
-#RemarkNameMessage {
-  display: none;
+#RemarkNameMessage,
+#CoursePathNameMessage,
+#CoursePathLengthMessage,
+#CoursePathTypeMessage,
+#CoursePathPHDMessage,
+#CoursePathSchoolMessage,
+#CoursePathRemarkMessage,
+#ScholarshipNameMessage,
+#ScholarshipTypeMessage,
+#ScholarshipValueMessage,
+#ScholarshipLinkMessage,
+#ScholarshipEmailMessage,
+#ScholarshipRemarkMessage,
+#SRequirementNameMessage,
+#SRequirementMessageMessage,
+#SRequirementRemarkMessage {
+  /* display: none; */
   font-size: 13px;
   margin-top: 5px;
   padding-left: 0.45px;

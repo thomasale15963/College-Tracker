@@ -267,3 +267,32 @@ export function moreInfoRemoveErrors() {
     .getElementById("LoanStatusMessage")
     .classList.remove("display", "error-text");
 }
+
+export function advancedInfoRemoveErrors() {}
+
+export function advancedInfoImageChange() {
+  const file = document.getElementById("FacultyImageInput").files[0];
+  const imagePreview = document.getElementById("FacultyImage");
+
+  console.log(imagePreview);
+  if (file) {
+    const reader = new FileReader();
+
+    const fileNames = file.name.split(".");
+
+    if (
+      fileNames[fileNames.length - 1] === "png" ||
+      fileNames[fileNames.length - 1] === "jpg" ||
+      fileNames[fileNames.length - 1] === "jpeg"
+    ) {
+      reader.addEventListener("load", function () {
+        imagePreview.setAttribute("src", this.result);
+      });
+      reader.readAsDataURL(file);
+    } else {
+      imagePreview.setAttribute("src", "./assets/img/placeholder-image.jpg");
+    }
+  } else {
+    imagePreview.setAttribute("src", "./assets/img/placeholder-image.jpg");
+  }
+}

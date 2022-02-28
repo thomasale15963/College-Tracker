@@ -2,7 +2,6 @@ import React from "react";
 
 // Import Icons
 import ClearOutlinedIcon from "@mui/icons-material/ClearOutlined";
-import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
 
 function RemarkInput({ count, removeFunction }) {
   return (

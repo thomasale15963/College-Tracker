@@ -5,13 +5,16 @@ export const initialState = {
 
   requirementsNumberCount: 0,
   remarkNumberCount: 0,
-  coursePathNumberCount: 1,
+  coursePathNumberCount: 0,
+  scholarshipNumberCount: 1,
+  scholarshipRequirementCount: 1,
+  facultyInformationCount: 5,
 
   facultyInformationValue: 0,
 };
 
 const reducer = (state, action) => {
-  console.log("Debug Print", action);
+  // console.log("Debug Print", action);
 
   switch (action.type) {
     case "CHANGE_APP_MODE":
@@ -50,15 +53,51 @@ const reducer = (state, action) => {
         remarkNumberCount: action.remarkNumberCount,
       };
 
+    case "INCREASE_COURSE_PATH_INPUT":
+      return {
+        ...state,
+        coursePathNumberCount: action.coursePathNumberCount,
+      };
+
+    case "DECREASE_COURSE_PATH_INPUT":
+      return {
+        ...state,
+        coursePathNumberCount: action.coursePathNumberCount,
+      };
+
+    case "INCREASE_SCHOLARSHIP_INPUT":
+      return {
+        ...state,
+        scholarshipNumberCount: action.scholarshipNumberCount,
+      };
+
+    case "DECREASE_SCHOLARSHIP_INPUT":
+      return {
+        ...state,
+        scholarshipNumberCount: action.scholarshipNumberCount,
+      };
+
+    case "INCREASE_SCHOLARSHIP_REQUIREMENT_INPUT":
+      return {
+        ...state,
+        scholarshipRequirementCount: action.scholarshipRequirementCount,
+      };
+
+    case "DECREASE_SCHOLARSHIP_REQUIREMENT_INPUT":
+      return {
+        ...state,
+        scholarshipRequirementCount: action.scholarshipRequirementCount,
+      };
+
     case "INCREASE_FACULTY_INPUT":
       return {
         ...state,
-        facultyInformationValue: action.facultyInformationValue,
+        facultyInformationCount: action.facultyInformationCount,
       };
     case "DECREASE_FACULTY_INPUT":
       return {
         ...state,
-        facultyInformationValue: action.facultyInformationValue,
+        facultyInformationCount: action.facultyInformationCount,
       };
 
     default:
