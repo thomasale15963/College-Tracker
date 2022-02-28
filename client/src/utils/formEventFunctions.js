@@ -76,7 +76,6 @@ export async function basicInfoComplete() {
       "ApplicationEmail",
     ]
   );
-  console.log(formValidity);
   if (formValidity.length !== 0) {
     formValidity.forEach((key) => {
       const inputElement = document.getElementById(key);
@@ -86,7 +85,7 @@ export async function basicInfoComplete() {
     });
   } else {
     // process image
-    const imageUrl = await getBase64(imageFile);
+    const imageUrl = imageFile ? await getBase64(imageFile) : "";
     const researchModeFormInputs = {
       name: universityName,
       image: imageUrl ? imageUrl : "",
@@ -101,7 +100,6 @@ export async function basicInfoComplete() {
       programEmail: splitterByComma("email", applicationEmail),
     };
 
-    console.log(researchModeFormInputs);
     return researchModeFormInputs;
   }
   // Cache Data
@@ -268,31 +266,157 @@ export function moreInfoRemoveErrors() {
     .classList.remove("display", "error-text");
 }
 
-export function advancedInfoRemoveErrors() {}
-
 export function advancedInfoImageChange() {
-  const file = document.getElementById("FacultyImageInput").files[0];
-  const imagePreview = document.getElementById("FacultyImage");
+  const allFiles = document.getElementsByName("FacultyImageInput");
+  const imagePreview = document.getElementsByName("FacultyImage");
 
-  console.log(imagePreview);
-  if (file) {
-    const reader = new FileReader();
+  for (let i = 0; i < allFiles.length; i++) {
+    if (allFiles[i]) {
+      const reader = new FileReader();
 
-    const fileNames = file.name.split(".");
+      const fileNames = allFiles[i].files[0].name.split(".");
 
-    if (
-      fileNames[fileNames.length - 1] === "png" ||
-      fileNames[fileNames.length - 1] === "jpg" ||
-      fileNames[fileNames.length - 1] === "jpeg"
-    ) {
-      reader.addEventListener("load", function () {
-        imagePreview.setAttribute("src", this.result);
-      });
-      reader.readAsDataURL(file);
+      if (
+        fileNames[fileNames.length - 1] === "png" ||
+        fileNames[fileNames.length - 1] === "jpg" ||
+        fileNames[fileNames.length - 1] === "jpeg"
+      ) {
+        reader.addEventListener("load", function () {
+          imagePreview[i].setAttribute("src", this.result);
+        });
+        reader.readAsDataURL(allFiles[i].files[0]);
+      } else {
+        imagePreview[i].setAttribute(
+          "src",
+          "./assets/img/placeholder-image.jpg"
+        );
+      }
     } else {
-      imagePreview.setAttribute("src", "./assets/img/placeholder-image.jpg");
+      imagePreview[i].setAttribute("src", "./assets/img/placeholder-image.jpg");
     }
-  } else {
-    imagePreview.setAttribute("src", "./assets/img/placeholder-image.jpg");
   }
+}
+
+export async function advancedInfoComplete() {
+  // Course Path Info
+  const cp_allNames = document.getElementsByName("CoursePathName");
+  const cp_allLengths = document.getElementsByName("CoursePathLength");
+  const cp_allTypes = document.getElementsByName("CoursePathType");
+  const cp_allCoursePathPHD = document.getElementsByName("CoursePathPHD");
+  const cp_allCourseSchool = document.getElementsByName("CoursePathSchool");
+  const cp_allRemarks = document.getElementsByName("CoursePathRemark");
+
+  var allCoursePaths = [];
+  for (let i = 0; i < cp_allNames.length; i++) {
+    if (cp_allNames[i].value) {
+      allCoursePaths.push({
+        courseName: cp_allNames[i].value,
+        courseLength: cp_allLengths[i].value ? cp_allLengths[i].value : "",
+        courseOption: cp_allTypes[i].value ? cp_allTypes[i].value : "",
+        courseHasPHD: cp_allCoursePathPHD[i].value
+          ? cp_allCoursePathPHD[i].value
+          : "",
+        schoolHasPHD: cp_allCourseSchool[i].value
+          ? cp_allCourseSchool[i].value
+          : "",
+        courseRemark: cp_allRemarks[i].value ? cp_allRemarks[i].value : "",
+      });
+    }
+  }
+
+  console.log(allCoursePaths);
+
+  // Scholarship - Requirements
+  const scr_allNames = document.getElementsByName("SRequirementName");
+  const scr_allMessages = document.getElementsByName("SRequirementMessage");
+  const scr_allRemarks = document.getElementsByName("SRequirementRemark");
+
+  var allSCR = [];
+  for (let i = 0; i < scr_allNames.length; i++) {
+    if (scr_allNames[i].values) {
+      allSCR.push({
+        name: scr_allNames[i].values ? scr_allNames[i].values : "",
+        message: scr_allMessages[i].values ? scr_allMessages[i].values : "",
+        remark: scr_allRemarks[i].values ? scr_allRemarks[i].values : "",
+      });
+    }
+  }
+
+  // Scholarship
+  const sc_allNames = document.getElementsByName("ScholarshipName");
+  const sc_allTypes = document.getElementsByName("ScholarshipType");
+  const sc_allValues = document.getElementsByName("ScholarshipValue");
+  const sc_allLinks = document.getElementsByName("ScholarshipLink");
+  const sc_allEmails = document.getElementsByName("ScholarshipEmail");
+  const sc_allRemarks = document.getElementsByName("ScholarshipRemark");
+
+  var allScholarships = [];
+  for (let i = 0; i < sc_allNames.length; i++) {
+    if (sc_allNames[i].value) {
+      allScholarships.push({
+        name: sc_allNames[i].value ? sc_allNames[i].value : "",
+        type: sc_allTypes[i].value ? sc_allTypes[i].value : "",
+        value: sc_allValues[i].value ? sc_allValues[i].value : "",
+        requirements: allSCR,
+        remark: sc_allRemarks[i].value ? sc_allRemarks[i].value : "",
+        email: sc_allEmails[i].value ? sc_allEmails[i].value : "",
+        link: sc_allLinks[i].value ? sc_allLinks[i].value : "",
+      });
+    }
+  }
+
+  console.log(allScholarships);
+
+  // Faculty
+  const fa_image = document.getElementsByName("FacultyImageInput");
+  const fa_allNames = document.getElementsByName("FacultyName");
+  const fa_allPositions = document.getElementsByName("FacultyPosition");
+  const fa_allLinks = document.getElementsByName("FacultyLink");
+  const fa_allEmails = document.getElementsByName("FacultyEmail");
+  const fa_allEducations = document.getElementsByName("FacultyEducation");
+  const fa_allInfos = document.getElementsByName("FacultyInfo");
+
+  // Faculty Image
+  var allFacultyImages = [];
+  for (let i = 0; i < fa_image.length; i++) {
+    const val = await getBase64(fa_image[i].files[0]);
+    allFacultyImages.push(val);
+  }
+
+  var allFaculty = [];
+  for (let i = 0; i < fa_allNames.length; i++) {
+    if (fa_allNames[i].value) {
+      allFaculty.push({
+        name: fa_allNames[i].value ? fa_allNames[i].value : "",
+        image: allFacultyImages[i],
+        position: fa_allPositions[i].value ? fa_allPositions[i].value : "",
+        link: fa_allLinks[i].value ? fa_allLinks[i].value : "",
+        email: fa_allEmails[i].value ? fa_allEmails[i].value : "",
+        information: fa_allInfos[i].value ? fa_allInfos[i].value : "",
+        education: fa_allEducations[i].value ? fa_allEducations[i].value : "",
+      });
+    }
+  }
+  return {
+    scholarship: allScholarships,
+    faculty: allFaculty,
+    coursePath: allCoursePaths,
+  };
+}
+
+export function advancedInfoRemoveErrors() {
+  [
+    "UniversityName",
+    "UniversityRank",
+    "UniversityCountry",
+    "UniversityCity",
+    "UniversityLink",
+    "ApplicationLink",
+    "ApplicationEmail",
+  ].forEach((key) => {
+    const inputElement = document.getElementById(key);
+    const inputMessageElement = document.getElementById(key + "Message");
+    inputElement.classList.remove("error-border");
+    inputMessageElement.classList.remove("display", "error-text");
+  });
 }

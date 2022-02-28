@@ -1,4 +1,5 @@
 export const initialState = {
+  apiURI: "http://localhost:5000/",
   // App Values to track
   appMode: null,
   researchModeFormProgress: 0,
@@ -6,9 +7,9 @@ export const initialState = {
   requirementsNumberCount: 0,
   remarkNumberCount: 0,
   coursePathNumberCount: 0,
-  scholarshipNumberCount: 1,
-  scholarshipRequirementCount: 1,
-  facultyInformationCount: 5,
+  scholarshipNumberCount: 0,
+  scholarshipRequirementCount: 0,
+  facultyInformationCount: 0,
 
   facultyInformationValue: 0,
 };

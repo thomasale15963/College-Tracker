@@ -30,8 +30,8 @@ function ResearchForm() {
 
   return (
     <form className="research__form__main__container" action="/">
-      {/* <ResearchFormOne /> */}
-      {/* <ResearchFormTwo /> */}
+      <ResearchFormOne />
+      <ResearchFormTwo />
       <ResearchFormThree />
     </form>
   );

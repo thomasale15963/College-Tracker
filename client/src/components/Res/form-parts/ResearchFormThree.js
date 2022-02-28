@@ -14,9 +14,22 @@ import { useStateProviderValue } from "../../../utils/StateProvider";
 import ScholarshipInput from "./ScholarshipInput";
 import FacultyInput from "./FacultyInput";
 
+// Get Helpers
+import { advancedInfoComplete } from "../../../utils/formEventFunctions";
+import {
+  getFromSessionStorage,
+  saveToSessionStorage,
+} from "../../../utils/helpers";
+import axios from "axios";
+
 function ResearchFormThree() {
   const [
-    { coursePathNumberCount, scholarshipNumberCount, facultyInformationCount },
+    {
+      coursePathNumberCount,
+      scholarshipNumberCount,
+      facultyInformationCount,
+      apiURI,
+    },
     dispatch,
   ] = useStateProviderValue();
   const coursePathNumberCountArray = [...Array(coursePathNumberCount).keys()];
@@ -24,8 +37,6 @@ function ResearchFormThree() {
   const facultyInformationCountArray = [
     ...Array(facultyInformationCount).keys(),
   ];
-
-  console.log(scholarshipCountArray);
 
   function addCoursePathInput() {
     dispatch({
@@ -45,7 +56,7 @@ function ResearchFormThree() {
       facultyInformationCount: facultyInformationCount + 1,
     });
   }
-  function addCampusImageInput() {}
+  // function addCampusImageInput() {}
   function removeCoursePathInput() {
     dispatch({
       type: "INCREASE_COURSE_PATH_INPUT",
@@ -68,9 +79,30 @@ function ResearchFormThree() {
         facultyInformationCount > 0 ? facultyInformationCount - 1 : 0,
     });
   }
-  function removeCampusImageInput() {}
+  // function removeCampusImageInput() {}
 
-  function handleFinishButton() {}
+  async function handleFinishButton() {
+    const result = await advancedInfoComplete();
+    const cachedData = JSON.parse(
+      getFromSessionStorage("researchModeCacheData")
+    );
+    if (result) {
+      const cachedDataUpdated = {
+        ...cachedData,
+        ...result,
+      };
+      saveToSessionStorage("researchModeCacheData", cachedDataUpdated);
+      const apiCall = await axios({
+        method: "POST",
+        url: apiURI,
+        data: {
+          researchModeFormData: cachedDataUpdated,
+        },
+      });
+
+      console.log(apiCall);
+    }
+  }
   return (
     <section className="research__form__three__container">
       <h1 className="research__form__heading__title">
@@ -136,6 +168,15 @@ function ResearchFormThree() {
         <div>Add New Faculty</div>
       </div>
       {/* End */}
+
+      <div className="container-col align-items-end">
+        <div
+          className="research__form__button__link"
+          onClick={handleFinishButton}
+        >
+          Finish
+        </div>
+      </div>
     </section>
   );
 }

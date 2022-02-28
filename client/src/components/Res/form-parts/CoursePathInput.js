@@ -1,6 +1,6 @@
 import React from "react";
 
-// IMpot helpers
+// Import helpers
 import { advancedInfoRemoveErrors } from "../../../utils/helpers";
 import ClearOutlinedIcon from "@mui/icons-material/ClearOutlined";
 
@@ -80,7 +80,7 @@ function CoursePathInput({ count, removeFunction }) {
           </label>
           <select
             className="research__form__text__input__medium input__item"
-            name="CoursePathType"
+            name="CoursePathPHD"
             placeholder="Yes"
             id="CoursePathPHD"
             onChange={advancedInfoRemoveErrors}

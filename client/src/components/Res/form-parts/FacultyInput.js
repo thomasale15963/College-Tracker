@@ -28,6 +28,7 @@ function FacultyInput({ count, removeFunction }) {
             alt="faculty look"
             className="faculty__image"
             id="FacultyImage"
+            name="FacultyImage"
           />
           <input
             type="file"
@@ -60,8 +61,8 @@ function FacultyInput({ count, removeFunction }) {
             </label>
             <input
               type="text"
-              name="FacultyName"
-              id="FacultyName"
+              name="FacultyPosition"
+              id="FacultyPosition"
               className="research__form__text__input__medium input__item"
             />
           </div>
