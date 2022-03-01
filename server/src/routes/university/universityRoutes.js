@@ -9,6 +9,7 @@ const {
 
 // Import express & router
 const router = require("express").Router();
+const { protectRoute } = require("../../middlewares/authMiddleware");
 
 /*
     ===============================================================
@@ -16,11 +17,11 @@ const router = require("express").Router();
     ===============================================================
 */
 
-router.post("/add", addNewUniversity);
-router.put("/update/id/:Id", updateUniversity);
-router.delete("/delete/id/:Id", deleteUniversity);
-router.delete("/delete/all", deleteAllUniversities);
-router.get("/get/id/:Id", getUniversity);
-router.get("/get/all", getAllUniversities);
+router.post("/add", protectRoute, addNewUniversity);
+router.put("/update/id/:Id", protectRoute, updateUniversity);
+router.delete("/delete/id/:Id", protectRoute, deleteUniversity);
+router.delete("/delete/all", protectRoute, deleteAllUniversities);
+router.get("/get/id/:Id", protectRoute, getUniversity);
+router.get("/get/all", protectRoute, getAllUniversities);
 
 module.exports = router;

@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const { Schema } = require("mongoose");
-const validator = require("validator");
 
 const universitySchema = new Schema({
   name: {
