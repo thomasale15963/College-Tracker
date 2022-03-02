@@ -104,7 +104,7 @@ function ResearchFormThree() {
         researchModeFormProgress: researchModeFormProgress + 1,
       });
 
-      const apiCall = await axios({
+      axios({
         method: "POST",
         url: `${apiURI}/university/add`,
         timeout: 10000,

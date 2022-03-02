@@ -6,7 +6,7 @@ import ClearOutlinedIcon from "@mui/icons-material/ClearOutlined";
 // Import Event Handlers
 import {
   advancedInfoImageChange,
-  advancedInfoRemoveErrors,
+  // advancedInfoRemoveErrors,
 } from "../../../utils/formEventFunctions";
 
 function FacultyInput({ count, removeFunction }) {

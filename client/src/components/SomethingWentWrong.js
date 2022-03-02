@@ -4,14 +4,14 @@ import "../styles/SomethingWenWrong.css";
 
 //
 import { useNavigate } from "react-router-dom";
-import { render } from "@testing-library/react";
-import ResearchFormOne from "./Res/form-parts/ResearchFormOne";
+// import { render } from "@testing-library/react";
+// import ResearchFormOne from "./Res/form-parts/ResearchFormOne";
 
 function SomethingWentWrong() {
   const navigate = useNavigate();
   function goHome() {
     console.log("Going Home");
-    render(<ResearchFormOne></ResearchFormOne>);
+    navigate("/");
   }
   return (
     <section className="error__display__container">

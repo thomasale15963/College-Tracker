@@ -20,7 +20,7 @@ function Home() {
 
           <div className="home__options__button__container">
             <PreviewOutlinedIcon className="home__options__button_icon" />
-            <a href="" className="home__option">
+            <a href="/form-two" className="home__option">
               View Mode
             </a>
           </div>

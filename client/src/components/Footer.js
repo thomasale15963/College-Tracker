@@ -1,9 +1,6 @@
 import React from "react";
 import "../styles/Footer.css";
 
-// Context API
-import { useStateProviderValue } from "../utils/StateProvider";
-
 // Helpers
 import { getYearForFooter } from "../utils/helpers";
 
@@ -18,10 +15,8 @@ function Footer() {
 
         <nav className="footer__navigation">
           <ul>
-            <a href="" className="active-mode">
-              Research Mode
-            </a>
-            |<a href="">View Mode</a>|<a href="">Policy</a>
+            <a className="active-mode">Research Mode</a>|<a>View Mode</a>|
+            <a>Policy</a>
           </ul>
         </nav>
       </div>

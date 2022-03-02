@@ -11,7 +11,6 @@ import ResearchFormTwo from "./form-parts/ResearchFormTwo";
 import ResearchFormThree from "./form-parts/ResearchFormThree";
 
 // Import Global State Provider
-import { useStateProviderValue } from "../../utils/StateProvider";
 
 import { Route, Routes } from "react-router-dom";
 
@@ -22,17 +21,6 @@ import SomethingWentWrong from "../SomethingWentWrong";
 // import FacultyInput from "../parts/FacultyInput";
 
 function ResearchForm() {
-  const [{ facultyInformationValue }, dispatch] = useStateProviderValue();
-  var facultyInformation = [...Array(facultyInformationValue).keys()];
-
-  function addFacultyInput() {
-    console.log("Testing Button");
-    dispatch({
-      type: "INCREASE_FACULTY_INPUT",
-      facultyInformationValue: facultyInformationValue + 1,
-    });
-  }
-
   return (
     <form className="research__form__main__container" action="/">
       <Routes>
